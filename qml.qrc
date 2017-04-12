@@ -2,10 +2,8 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
-        <file>ProMatches.qml</file>
         <file>TableBorder.qml</file>
-        <file>MatchesTableRow.qml</file>
-        <file>MatchIdCell.qml</file>
         <file>AwardImage.qml</file>
+        <file>OdTabButton.qml</file>
     </qresource>
 </RCC>

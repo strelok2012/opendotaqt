@@ -21,22 +21,19 @@ Item {
     Rectangle{
         color: "#2D2D44"
         anchors.fill: parent
-        Rectangle{
-            anchors.fill : parent
-            color: parent.color
-            anchors.margins: 15
+        Component{
+            id : proMatchesHeader
             Rectangle {
+                id: tHead
                 visible: listLoaded
                 color: "#20202F"
                 width: parent.width
                 height: 60
-                Rectangle {
-                    color: parent.color
+                Item {
                     height: parent.height
                     width: parent.width*0.3
                     id: thId
-                    Rectangle {
-                        color: parent.color
+                    Item {
                         anchors.fill : parent
                         anchors.leftMargin: 5
                         Text {
@@ -50,10 +47,9 @@ Item {
 
 
                 }
-                Rectangle {
+                Item {
                     id: thDuration
                     anchors.left: thId.right
-                    color: parent.color
                     height: parent.height
                     width: parent.width*0.15
                     Text {
@@ -63,10 +59,9 @@ Item {
                          font.pointSize: 9
                     }
                 }
-                Rectangle {
+                Item {
                     id: thRadiant
                     anchors.left: thDuration.right
-                    color: parent.color
                     height: parent.height
                     width: parent.width*0.2
                     Text {
@@ -77,10 +72,9 @@ Item {
                     }
                 }
 
-                Rectangle {
+                Item {
                     id: thDire
                     anchors.left: thRadiant.right
-                    color: parent.color
                     height: parent.height
                     width: parent.width*0.2
                     Text {
@@ -93,19 +87,24 @@ Item {
 
 
             }
+        }
 
+        Item{
+            anchors.fill : parent
             ListView {
                 visible: listLoaded
                 id: matchesListView
-                anchors.topMargin: 60
-                anchors.fill: parent
                 model: proMatchesModel
+                width: parent.width
+                height: parent.height
+                header: proMatchesHeader
                 delegate: Item {
                     height: 40
                     width: parent.width
-                    MatchesTableRow {
+                    MatchesProTableRow {
                     }
                 }
+                ScrollBar.vertical: ScrollBar { }
             }
         }
         BusyIndicator {

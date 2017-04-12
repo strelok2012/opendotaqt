@@ -7,9 +7,12 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("OpenDota")
+    color: "#2D2D44"
 
-    ProMatches{
+    MatchesView {
 
     }
+
+
 
 }

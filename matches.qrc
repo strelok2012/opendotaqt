@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>MatchesPro.qml</file>
+        <file>MatchIdCell.qml</file>
+        <file>MatchesProTableRow.qml</file>
+        <file>MatchesView.qml</file>
+    </qresource>
+</RCC>
